@@ -1,0 +1,28 @@
+{
+  "name": "loveletter",
+  "version": "1.0.0",
+  "description": "LoveLetter - typescript rebuild",
+  "main": "/src/scripts/index.js",
+  "scripts": {
+    "webpack": "webpack --progress",
+    "production": "npm run webpack -- --mode production",
+    "development": "npm run webpack -- --mode development --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sharqiewicz/LoveLetter.git"
+  },
+  "author": "Kacper Szarkiewicz",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "bugs": {
+    "url": "https://github.com/Sharqiewicz/LoveLetter/issues"
+  },
+  "homepage": "https://github.com/Sharqiewicz/LoveLetter#readme"
+}

@@ -1,0 +1,1 @@
+const EIGHTEEN: number = 18;
