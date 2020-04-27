@@ -28,7 +28,7 @@ const start_actions = {
 
         // click on the deck to play turn
         document.getElementById("deck").addEventListener("click", () => {
-        this.startTurn();
+            this.startTurn();
         });
 
     },
