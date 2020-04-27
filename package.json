@@ -16,13 +16,19 @@
   "author": "Kacper Szarkiewicz",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap": "^4.4.1",
+    "css-loader": "^3.5.3",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
-    "webpack": "^4.41.2",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.10"
   },
   "bugs": {
     "url": "https://github.com/Sharqiewicz/LoveLetter/issues"
   },
-  "homepage": "https://github.com/Sharqiewicz/LoveLetter#readme"
+  "homepage": "https://github.com/Sharqiewicz/LoveLetter#readme",
+  "dependencies": {}
 }
