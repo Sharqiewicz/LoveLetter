@@ -34,7 +34,7 @@ const deck_actions = {
         this.shuffle();
 
     },
-    isEmpty: function () {
+    isEmpty: function (): boolean {
         return (this.card_list.length == 0);
     }
 }
