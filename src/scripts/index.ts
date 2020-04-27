@@ -1,3 +1,9 @@
 import '../scss/main.scss';
 
-const EIGHTEEN: number = 18
+import Deck from './classes/DeckClass'
+
+const DECK = new Deck;
+
+DECK.init();
+console.log(DECK);
+console.log('Works!')
