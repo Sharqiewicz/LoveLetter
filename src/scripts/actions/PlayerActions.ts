@@ -10,15 +10,12 @@ const player_actions = {
         cards_actions[6]();
     },
 
-    use: function (card_number) {
+    use: function (card) {
         console.log('use!');
 
         //reset immunity
         this.immunity = false;
-
-        // remove used card from cards in your hand
-        let card;
-        card_number == 0 ? card = this.cards.shift() : card = this.cards.pop();
+        console.log(card)
         card.use();
     },
 

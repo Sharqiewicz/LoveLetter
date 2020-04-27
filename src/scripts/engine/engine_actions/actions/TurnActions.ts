@@ -1,4 +1,5 @@
 import Player from '../../../classes/PlayerClass';
+import Card from '../../../classes/CardClass';
 
 function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
         if (player.active) {
@@ -79,7 +80,7 @@ const turn_actions = {
 
     // TODO
     executeTurn: function (actual_player) {
-        console.log('excecuting turn')
+        console.log('------------------ executing turn ------------------')
         console.log('now turn is doing: ')
         console.log(actual_player);
         console.log(`Deck length: ${this.deck.card_list.length}`)
@@ -94,6 +95,11 @@ const turn_actions = {
         const chosen_player = randomEnemy(this.players, actual_player);
         console.log('random enemy:');
         console.log(chosen_player);
+
+        const chosen_card:Card = actual_player.cards.find( card => card.value != 8 );
+        actual_player.cards = actual_player.cards.filter( card => card.id != chosen_card.id)
+
+        actual_player.use(chosen_card)
 
 
     }

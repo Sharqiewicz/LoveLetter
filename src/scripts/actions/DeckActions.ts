@@ -25,7 +25,7 @@ const deck_actions = {
             i == 5 ? y = 2 : i == 7 ? y = 3 : i == 9 ? y = 4 : i == 11 ? y = 5 : i == 13 ? y = 6 : i == 14 ? y = 7 : i == 15 ? y = 8 : y = y;
 
             const factory = new CardFactory();
-            this.card_list.push(factory.create(y));
+            this.card_list.push(factory.create(y,i));
         }
         this.shuffle();
         this.shuffle();
