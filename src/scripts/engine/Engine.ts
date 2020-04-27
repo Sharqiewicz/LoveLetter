@@ -1,31 +1,36 @@
+import Player from '../classes/PlayerClass';
+import Deck from '../classes/DeckClass';
 import engine_actions from './engine_actions/EngineActions';
 
-function Engine(deck) {
 
-    this.won = false;
-    this.players = [];
-    this.dom_enemies = [];
-    this.checkboxes_enemies = [];
-    this.deck = deck;
-};
+class Engine{
 
-Engine.prototype = {
+    public won: boolean = false;
+    public players: Player[] = [];
+    //public dom_enemies;
+    //public checkboxes
 
-    startGame: engine_actions.startGame,
-    setBots: engine_actions.setBots,
-    setEnemiesInDOM: engine_actions.setEnemiesInDOM,
 
-    checkRemainingPlayers: engine_actions.checkRemainingPlayers,
-    moveActivity: engine_actions.moveActivity,
-    checkActivityAndExecuteTurn: engine_actions.checkActivityAndExecuteTurn,
+    public startGame = engine_actions.startGame;
+    public setBots =  engine_actions.setBots;
+    public setEnemiesInDOM = engine_actions.setEnemiesInDOM;
 
-    startTurn: engine_actions.startTurn,
-    executeTurn: engine_actions.executeTurn,
-    endTurn: engine_actions.endTurn,
+    public checkRemainingPlayers = engine_actions.checkRemainingPlayers;
+    public moveActivity = engine_actions.moveActivity;
+    public checkActivityAndExecuteTurn = engine_actions.checkActivityAndExecuteTurn;
 
-    endGame: engine_actions.endGame,
-    lastCardComparision: engine_actions.lastCardComparision,
+    public startTurn = engine_actions.startTurn;
+    public executeTurn = engine_actions.executeTurn;
+    public endTurn = engine_actions.endTurn;
 
+    public endGame = engine_actions.endGame;
+    public lastCardComparision = engine_actions.lastCardComparision;
+
+    constructor(public deck: Deck){
+        this.deck = deck;
+    }
 }
+
+
 
 export default Engine;

@@ -22,7 +22,6 @@ const engine_actions = {
     endTurn: function () {
         this.checkRemainingPlayers();
         this.moveActivity();
-        this.startTurn();
     },
 
 

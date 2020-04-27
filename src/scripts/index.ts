@@ -1,5 +1,6 @@
-import Engine from './engine/Engine'
-import Deck from './classes/DeckClass'
+import '../scss/main.scss';
+import Engine from './engine/Engine';
+import Deck from './classes/DeckClass';
 
 const DECK = new Deck;
 

@@ -1,4 +1,6 @@
-function moveActivityIndex(player, index, arr){
+import Player from '../../../classes/PlayerClass';
+
+function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
         if (player.active) {
             player.active = false;
 
@@ -7,6 +9,15 @@ function moveActivityIndex(player, index, arr){
            }
             return index + 1;
         }
+}
+
+const randomEnemy = (actual_player: Player): Player => {
+    console.log(this)
+    let chosen_player: Player = this.players[Math.floor(Math.random() * this.players.length)];
+    if (typeof chosen_player === 'undefined' || chosen_player.id === actual_player.id) {
+        randomEnemy.call(this, actual_player);
+    }
+    return chosen_player;
 }
 
 
@@ -71,6 +82,18 @@ const turn_actions = {
         console.log('excecuting turn')
         console.log('now turn is doing: ')
         console.log(actual_player);
+        console.log(`Deck length: ${this.deck.card_list.length}`)
+
+        if(this.deck.card_list.length === 0){
+            this.lastCardComparision();
+            return null;
+        }
+
+        actual_player.draw(this.deck.draw());
+
+        const chosen_player = randomEnemy.call(this, actual_player);
+
+
     }
 }
 
