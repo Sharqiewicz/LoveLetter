@@ -11,11 +11,11 @@ function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
         }
 }
 
-const randomEnemy = (actual_player: Player): Player => {
-    console.log(this)
-    let chosen_player: Player = this.players[Math.floor(Math.random() * this.players.length)];
+const randomEnemy = (players: Player[], actual_player: Player): Player => {
+
+    let chosen_player: Player = players[Math.floor(Math.random() * players.length)];
     if (typeof chosen_player === 'undefined' || chosen_player.id === actual_player.id) {
-        randomEnemy.call(this, actual_player);
+        randomEnemy(players, actual_player);
     }
     return chosen_player;
 }
@@ -91,7 +91,9 @@ const turn_actions = {
 
         actual_player.draw(this.deck.draw());
 
-        const chosen_player = randomEnemy.call(this, actual_player);
+        const chosen_player = randomEnemy(this.players, actual_player);
+        console.log('random enemy:');
+        console.log(chosen_player);
 
 
     }
