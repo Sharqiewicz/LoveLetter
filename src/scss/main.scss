@@ -1,10 +1,64 @@
 body{
-    background-color: black;
+    background-color: #ccc;
 }
 
-#deck{
-    width: 100px;
-    height: 100px;
-    background-color: #225577;
+.game__container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border: 1px solid #222;
+    margin: 5%;
+}
+
+.deck__container, .usedcard__container{
+    width: 150px;
+    height: 200px;
+    border: 1px solid #222;
+
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+.usedcard__container{
+    left: 65%;
+}
+
+.player__container{
+    position: absolute;
+}
+
+.player--one{
+    top: 35%;
+    left: 5%;
+}
+
+.player--two{
+    top: 35%;
+    right: 5%;
+}
+
+.player--three{
+    top: 5%;
+    left: 45%;
+}
+
+.player--four{
+    bottom: 5%;
+    left: 45%;
+}
+
+.card__element{
+    width: 150px;
+    height: 200px;
+    border: 1px solid #222;
+}
+
+.card--back{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card--shown{
 
 }
