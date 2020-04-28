@@ -3,7 +3,7 @@ import deck_actions from '../actions/DeckActions'
 
 export default class DeckClass {
     // Arrays
-    card_list:Card[] = [];
+    private card_list:Card[] = [];
 
     // Functions
     public init;

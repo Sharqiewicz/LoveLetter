@@ -1,4 +1,6 @@
 import player_actions from "../actions/PlayerActions";
+import Card from './CardClass';
+import Command from './Command';
 
 export default class PlayerClass {
 
@@ -9,15 +11,19 @@ export default class PlayerClass {
 
     // functions
     public draw;
-    public use;
     public drop;
+    public action;
 
     constructor(public id: number) {
         this.id = id;
 
         this.draw = player_actions.draw;
-        this.use = player_actions.use;
+        this.action = player_actions.use;
         this.drop = player_actions.drop;
+    }
+
+    use(card:Card, command: Command) {
+        this.action(card, command);
     }
 
 }

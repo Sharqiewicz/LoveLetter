@@ -1,9 +1,10 @@
 import '../scss/main.scss';
-
-import Deck from './classes/DeckClass'
+import Engine from './engine/Engine';
+import Deck from './classes/DeckClass';
 
 const DECK = new Deck;
 
-DECK.init();
-console.log(DECK);
+const ENGINE = new Engine(DECK);
+
+ENGINE.startGame();
 console.log('Works!')
