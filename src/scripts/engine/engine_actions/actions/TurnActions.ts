@@ -1,4 +1,5 @@
 import Player from '../../../classes/PlayerClass';
+import Command from '../../../classes/Command';
 import Card from '../../../classes/CardClass';
 
 function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
@@ -99,7 +100,14 @@ const turn_actions = {
         const chosen_card:Card = actual_player.cards.find( card => card.value != 8 );
         actual_player.cards = actual_player.cards.filter( card => card.id != chosen_card.id)
 
-        actual_player.use(chosen_card)
+        const command: Command = {
+            requesting_player: actual_player,
+            picked_enemy: chosen_player,
+            picked_value: 1,
+            deck: this.deck
+        }
+
+        actual_player.use(chosen_card, command)
 
 
     }

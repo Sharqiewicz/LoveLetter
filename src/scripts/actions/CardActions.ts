@@ -1,4 +1,5 @@
 import Player from '../classes/PlayerClass';
+import Card from '../classes/CardClass';
 import Deck from '../classes/DeckClass';
 import Command from '../classes/Command';
 
@@ -27,6 +28,18 @@ function changeEnemyCard(picked_enemy: Player, deck: Deck){
     picked_enemy.draw()
 }
 
+function changeCardWithEnemy(requesting_player: Player, picked_enemy:Player){
+    let tmp = requesting_player.cards[0];
+    requesting_player.cards[0] = picked_enemy.cards[0];
+    picked_enemy.cards[0] = tmp;
+}
+
+// ERROR ALERT //
+//might return undefined
+function checkIfSeven(cards: Card[]){
+    return cards.filter( card => card.getValue() !== 7);
+}
+
 const cards_actions = [
 
     function one(command: Command ){
@@ -51,12 +64,16 @@ const cards_actions = [
     },
     function six(command: Command ){
         console.log('six')
+        changeCardWithEnemy(command.requesting_player, command.picked_enemy);
     },
-    function seven(cards){
+    function seven(cards: Card[]){
         console.log('seven')
+        console.log(cards)
+        return checkIfSeven(cards);
     },
-    function eight(command: Command ){
+    function eight(cards: Card[] ){
         console.log('eight')
+        return cards.every( card => card.getValue() === 8);
     },
 ]
 ;
