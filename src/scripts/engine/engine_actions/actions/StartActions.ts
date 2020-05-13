@@ -1,10 +1,24 @@
 import Player from "../../../classes/PlayerClass";
+const enemiesContainer:HTMLDivElement = document.querySelector(".enemies__container");
+
+
+function createBot(index: number): HTMLDivElement{
+    let el = document.createElement("div");
+    let eltxt = document.createElement("p");
+    eltxt.classList.add("card--text");
+    eltxt.textContent = ` Enemy ${index}`;
+    el.classList.add("card__element");
+    el.classList.add("enemy--card");
+    el.classList.add(`enemy--${index}`);
+    el.appendChild(eltxt);
+    return el;
+}
 
 const start_actions = {
 
     // Set players objects
-    setBots: function ({ players_number }) {
-        for (let i = 0; i < players_number; i++) {
+    setBots: function (): void {
+        for (let i = 0; i < this.players.length; i++) {
             this.players[i] = new Player(i);
             this.players[i].draw(this.deck.draw());
             console.log(this.players[i])
@@ -15,15 +29,18 @@ const start_actions = {
     },
 
     // Draw Players in the DOM
-    setEnemiesInDOM: function () {
+    setEnemiesInDOM: function (): void {
+        for (let i = 1; i <= this.players.length; i++) {
+            enemiesContainer.appendChild(createBot(i))
+        }
         console.log('BOTS SET IN THE DOM!')
     },
 
 
-    startGame: function () {
+    startGame: function (): void {
 
         this.deck.init();
-        this.setBots({ players_number: 3 })
+        this.setBots()
         this.setEnemiesInDOM();
 
         // click on the deck to play turn
