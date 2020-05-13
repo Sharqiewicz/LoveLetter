@@ -8,6 +8,7 @@ function createBot(index: number): HTMLDivElement{
 
     let checkbox: HTMLInputElement = document.createElement("input");
     checkbox.type = "radio";
+    checkbox.name = "enemy--checkbox";
     checkbox.id = index.toString();
 
     eltxt.classList.add("card--text");
