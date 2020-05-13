@@ -16,10 +16,13 @@ function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
 const randomEnemy = (players: Player[], actual_player: Player): Player => {
 
     let chosen_player: Player = players[Math.floor(Math.random() * players.length)];
-    if (typeof chosen_player === 'undefined' || chosen_player.id === actual_player.id) {
-        randomEnemy(players, actual_player);
+    if (typeof chosen_player === 'undefined') {
+        return randomEnemy(players, actual_player);
     }
-    return chosen_player;
+    if(chosen_player.id === actual_player.id){
+        return randomEnemy(players, actual_player);
+    }
+        return chosen_player;
 }
 
 
@@ -114,7 +117,7 @@ const turn_actions = {
 
         actual_player.use(chosen_card, command)
 
-
+        document.getElementById('last__used').textContent = chosen_card.getValue().toString();
     }
 }
 
