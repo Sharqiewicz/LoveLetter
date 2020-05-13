@@ -37,7 +37,9 @@ function changeCardWithEnemy(requesting_player: Player, picked_enemy:Player){
 // ERROR ALERT //
 //might return undefined
 function checkIfSeven(cards: Card[]){
-    return cards.filter( card => card.getValue() !== 7);
+    if(cards.every( card => ( card.getValue() != 6 || card.getValue() != 5 ))){
+        return cards.filter( card => card.getValue() !== 7);
+    }
 }
 
 const cards_actions = [
