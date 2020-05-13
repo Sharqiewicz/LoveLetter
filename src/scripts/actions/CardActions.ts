@@ -13,9 +13,9 @@ function show_enemy_card(picked_enemy: Player){
 }
 
 function card_comparision(requesting_player:Player, picked_enemy: Player ){
-    requesting_player.cards[0].value > picked_enemy.cards[0].value ?
+    requesting_player.cards[0].getValue() > picked_enemy.cards[0].getValue() ?
         picked_enemy.gameover = true :
-     requesting_player.cards[0].value < picked_enemy.cards[0].value ?
+     requesting_player.cards[0].getValue() < picked_enemy.cards[0].getValue() ?
         requesting_player.gameover = true : null;
 }
 
@@ -25,7 +25,7 @@ function turnImmunity(requesting_player: Player){
 
 function changeEnemyCard(picked_enemy: Player, deck: Deck){
     picked_enemy.drop();
-    picked_enemy.draw()
+    picked_enemy.draw(deck)
 }
 
 function changeCardWithEnemy(requesting_player: Player, picked_enemy:Player){
@@ -37,7 +37,10 @@ function changeCardWithEnemy(requesting_player: Player, picked_enemy:Player){
 // ERROR ALERT //
 //might return undefined
 function checkIfSeven(cards: Card[]){
-    return cards.filter( card => card.getValue() !== 7);
+    if(cards.every( card => ( card.getValue() != 6 || card.getValue() != 5 ))){
+        return cards.filter( card => card.getValue() !== 7);
+    }
+    return cards;
 }
 
 const cards_actions = [

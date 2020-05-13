@@ -16,10 +16,13 @@ function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
 const randomEnemy = (players: Player[], actual_player: Player): Player => {
 
     let chosen_player: Player = players[Math.floor(Math.random() * players.length)];
-    if (typeof chosen_player === 'undefined' || chosen_player.id === actual_player.id) {
-        randomEnemy(players, actual_player);
+    if (typeof chosen_player === 'undefined') {
+        return randomEnemy(players, actual_player);
     }
-    return chosen_player;
+    if(chosen_player.id === actual_player.id){
+        return randomEnemy(players, actual_player);
+    }
+        return chosen_player;
 }
 
 
@@ -38,9 +41,10 @@ const turn_actions = {
                 // add dead style to the player who lost in DOM
                 if (index != 0) {
                     // bot is dead
+                    document.querySelectorAll('.enemy--card')[index-1].classList.add('card--hidden');
                 }
                 if (index == 0) {
-                    // player is dead
+                    document.querySelector('.user__container').classList.add('card--hidden')
                 }
 
                 //remove the player who lost from the players array
@@ -55,6 +59,7 @@ const turn_actions = {
             }
 
         });
+        console.log(this.players)
     },
 
     // DONE
@@ -91,7 +96,13 @@ const turn_actions = {
             return null;
         }
 
-        actual_player.draw(this.deck.draw());
+        actual_player.draw(this.deck);
+
+        if(actual_player.id === 0){
+            const domCards = document.querySelectorAll('.player--card');
+            console.log(actual_player.cards)
+            domCards.forEach( (card, index) => card.textContent = actual_player.cards[index].value)
+        }
 
         const chosen_player = randomEnemy(this.players, actual_player);
         console.log('random enemy:');
@@ -109,7 +120,7 @@ const turn_actions = {
 
         actual_player.use(chosen_card, command)
 
-
+        document.getElementById('last__used').textContent = chosen_card.getValue().toString();
     }
 }
 

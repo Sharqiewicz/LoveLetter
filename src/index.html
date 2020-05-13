@@ -2,10 +2,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <title>LoveLetter</title>
 </head>
 <body>
-    <div id="deck"></div>
+    <div class="game__container">
+        <div class="enemies__container"></div>
+        <div class="user__container">
+            <div id="1" class="card__element player--card"> Value </div>
+            <div id="2" class="card__element player--card"> Value </div>
+        </div>
+        <div class="stats__container">
+            <div id="last__used" class="card__element"> Last </div>
+            <div id="deck" class="deck__container card--back"> LoveLetter </div>
+        </div>
+    </div>
 </body>
 <script src='../dist/bundle.js'></script>
 </html>

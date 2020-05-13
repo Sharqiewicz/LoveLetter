@@ -1,10 +1,79 @@
 body{
-    background-color: black;
+    background-color: #ccc;
+    font-family: 'Satisfy', cursive;
 }
 
-#deck{
-    width: 100px;
-    height: 100px;
-    background-color: #225577;
+.flex--complet{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.game__container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border: 1px solid #222;
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deck__container, .usedcard__container{
+    width: 150px;
+    height: 200px;
+    border: 1px solid #222;
+}
+
+
+.card__element{
+    @extend .flex--complet;
+    width: 150px;
+    height: 200px;
+    border: 1px solid #222;
+}
+
+.card--back{
+    @extend .flex--complet;
+    color: #222;
+}
+
+.enemies__container{
+    position: absolute;
+    @extend .flex--complet;
+    justify-content: space-around;
+    left:0;
+    top:0;
+    display: flex;
+    height: 40%;
+    width: 70%;
+}
+
+.stats__container{
+    @extend .flex--complet;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+}
+
+.user__container{
+    @extend .flex--complet;
+    justify-content: space-around;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    height: 50%;
+    width: 60%;
+}
+
+.card--shown{
+    display: block;
+}
+.card--hidden{
+    display: none;
 }
