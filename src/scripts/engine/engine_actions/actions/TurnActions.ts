@@ -93,6 +93,11 @@ const turn_actions = {
 
         actual_player.draw(this.deck.draw());
 
+        if(actual_player.id === 0){
+            const domCards = document.querySelectorAll('.player--card');
+            domCards.forEach( (card, index) => card.textContent = actual_player.cards[index].value)
+        }
+
         const chosen_player = randomEnemy(this.players, actual_player);
         console.log('random enemy:');
         console.log(chosen_player);
