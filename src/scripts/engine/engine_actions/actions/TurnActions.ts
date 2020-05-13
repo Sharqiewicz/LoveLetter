@@ -49,6 +49,7 @@ const turn_actions = {
 
                 //remove the player who lost from the players array
                 this.players = this.players.filter((o, i) => i !== index);
+
                 //dom_bots = bots.filter((o, i) => i !== index);
 
                 // ??? // if current player is dead, increase nextindex is needed
@@ -59,6 +60,7 @@ const turn_actions = {
             }
 
         });
+        console.log(this.players)
     },
 
     // DONE
