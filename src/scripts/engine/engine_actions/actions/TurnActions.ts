@@ -41,9 +41,10 @@ const turn_actions = {
                 // add dead style to the player who lost in DOM
                 if (index != 0) {
                     // bot is dead
+                    document.querySelectorAll('.enemy--card')[index].classList.add('card--hidden');
                 }
                 if (index == 0) {
-                    // player is dead
+                    //player is dead
                 }
 
                 //remove the player who lost from the players array
