@@ -5,12 +5,21 @@ const enemiesContainer:HTMLDivElement = document.querySelector(".enemies__contai
 function createBot(index: number): HTMLDivElement{
     let el = document.createElement("div");
     let eltxt = document.createElement("p");
+
+    let checkbox: HTMLInputElement = document.createElement("input");
+    checkbox.type = "radio";
+    checkbox.id = index.toString();
+
     eltxt.classList.add("card--text");
     eltxt.textContent = ` Enemy ${index}`;
     el.classList.add("card__element");
     el.classList.add("enemy--card");
     el.classList.add(`enemy--${index}`);
+
+    if(index === 1) checkbox.checked = true;
+
     el.appendChild(eltxt);
+    el.appendChild(checkbox);
     return el;
 }
 
