@@ -96,7 +96,7 @@ const turn_actions = {
             return null;
         }
 
-        actual_player.draw(this.deck.draw());
+        actual_player.draw(this.deck);
 
         if(actual_player.id === 0){
             const domCards = document.querySelectorAll('.player--card');

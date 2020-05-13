@@ -25,7 +25,7 @@ function turnImmunity(requesting_player: Player){
 
 function changeEnemyCard(picked_enemy: Player, deck: Deck){
     picked_enemy.drop();
-    picked_enemy.draw(deck.draw())
+    picked_enemy.draw(deck)
 }
 
 function changeCardWithEnemy(requesting_player: Player, picked_enemy:Player){

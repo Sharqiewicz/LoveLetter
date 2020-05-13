@@ -30,7 +30,7 @@ const start_actions = {
     setBots: function (players_number:number): void {
         for (let i = 0; i < players_number; i++) {
             this.players[i] = new Player(i);
-            this.players[i].draw(this.deck.draw());
+            this.players[i].draw(this.deck);
             console.log(this.players[i])
         }
         this.players[0].active = true;
