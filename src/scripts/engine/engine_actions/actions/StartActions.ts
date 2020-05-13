@@ -17,8 +17,8 @@ function createBot(index: number): HTMLDivElement{
 const start_actions = {
 
     // Set players objects
-    setBots: function (): void {
-        for (let i = 0; i < this.players.length; i++) {
+    setBots: function (players_number:number): void {
+        for (let i = 0; i < players_number; i++) {
             this.players[i] = new Player(i);
             this.players[i].draw(this.deck.draw());
             console.log(this.players[i])
@@ -40,7 +40,7 @@ const start_actions = {
     startGame: function (): void {
 
         this.deck.init();
-        this.setBots()
+        this.setBots(3)
         this.setEnemiesInDOM();
 
         // click on the deck to play turn
