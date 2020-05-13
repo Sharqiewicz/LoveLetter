@@ -41,7 +41,7 @@ const turn_actions = {
                 // add dead style to the player who lost in DOM
                 if (index != 0) {
                     // bot is dead
-                    document.querySelectorAll('.enemy--card')[index].classList.add('card--hidden');
+                    document.querySelectorAll('.enemy--card')[index-1].classList.add('card--hidden');
                 }
                 if (index == 0) {
                     document.querySelector('.user__container').classList.add('card--hidden')
@@ -49,7 +49,6 @@ const turn_actions = {
 
                 //remove the player who lost from the players array
                 this.players = this.players.filter((o, i) => i !== index);
-
                 //dom_bots = bots.filter((o, i) => i !== index);
 
                 // ??? // if current player is dead, increase nextindex is needed
@@ -101,6 +100,7 @@ const turn_actions = {
 
         if(actual_player.id === 0){
             const domCards = document.querySelectorAll('.player--card');
+            console.log(actual_player.cards)
             domCards.forEach( (card, index) => card.textContent = actual_player.cards[index].value)
         }
 

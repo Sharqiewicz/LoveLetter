@@ -13,9 +13,9 @@ function show_enemy_card(picked_enemy: Player){
 }
 
 function card_comparision(requesting_player:Player, picked_enemy: Player ){
-    requesting_player.cards[0].value > picked_enemy.cards[0].value ?
+    requesting_player.cards[0].getValue() > picked_enemy.cards[0].getValue() ?
         picked_enemy.gameover = true :
-     requesting_player.cards[0].value < picked_enemy.cards[0].value ?
+     requesting_player.cards[0].getValue() < picked_enemy.cards[0].getValue() ?
         requesting_player.gameover = true : null;
 }
 
