@@ -30,7 +30,7 @@ const start_actions = {
 
     // Draw Players in the DOM
     setEnemiesInDOM: function (): void {
-        for (let i = 1; i <= this.players.length; i++) {
+        for (let i = 1; i < this.players.length; i++) {
             enemiesContainer.appendChild(createBot(i))
         }
         console.log('BOTS SET IN THE DOM!')
@@ -40,7 +40,7 @@ const start_actions = {
     startGame: function (): void {
 
         this.deck.init();
-        this.setBots(3)
+        this.setBots(4)
         this.setEnemiesInDOM();
 
         // click on the deck to play turn
