@@ -40,6 +40,7 @@ function checkIfSeven(cards: Card[]){
     if(cards.every( card => ( card.getValue() != 6 || card.getValue() != 5 ))){
         return cards.filter( card => card.getValue() !== 7);
     }
+    return cards;
 }
 
 const cards_actions = [
