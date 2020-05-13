@@ -1,5 +1,12 @@
 body{
     background-color: #ccc;
+    font-family: 'Satisfy', cursive;
+}
+
+.flex--complet{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game__container{
@@ -8,44 +15,16 @@ body{
     height: 90%;
     border: 1px solid #222;
     margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .deck__container, .usedcard__container{
     width: 150px;
     height: 200px;
     border: 1px solid #222;
-
-    position: absolute;
-    top: 35%;
-    left: 25%;
-}
-.usedcard__container{
-    left: 65%;
 }
 
-.player__container{
-    position: absolute;
-}
-
-.player--one{
-    top: 35%;
-    left: 5%;
-}
-
-.player--two{
-    top: 35%;
-    right: 5%;
-}
-
-.player--three{
-    top: 5%;
-    left: 45%;
-}
-
-.player--four{
-    bottom: 5%;
-    left: 45%;
-}
 
 .card__element{
     width: 150px;
@@ -54,11 +33,44 @@ body{
 }
 
 .card--back{
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    @extend .flex--complet;
+    color: #222;
+}
+
+.enemies__container{
+    position: absolute;
+    left:0;
+    top:0;
+    display: flex;
+    height: 40%;
+    width: 70%;
+}
+
+.stats__container{
+    @extend .flex--complet;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+}
+
+.user__container{
+    @extend .flex--complet;
+    justify-content: space-around;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    height: 50%;
+    width: 60%;
 }
 
 .card--shown{
-
+    display: block;
+}
+.card--hidden{
+    display: none;
 }

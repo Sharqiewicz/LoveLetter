@@ -2,23 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <title>LoveLetter</title>
 </head>
 <body>
     <div class="game__container">
-        <div id="deck" class="deck__container"></div>
-        <div id="usedcard" class="usedcard__container"></div>
-        <div id="player1" class="player__container player--one">
-            <div class="card__element card--back"></div>
+        <div class="enemies__container"></div>
+        <div class="user__container">
+            <div id="first__card" class="card__element"> Value </div>
+            <div id="second__card" class="card__element"> Value </div>
         </div>
-        <div id="player2" class="player__container player--two">
-            <div class="card__element card--back"></div>
-        </div>
-        <div id="player3" class="player__container player--three">
-            <div class="card__element card--back"></div>
-        </div>
-        <div id="player4" class="player__container player--four">
-            <div class="card__element card--back"></div>
+        <div class="stats__container">
+            <div id="last__used" class="card__element"> Last </div>
+            <div id="deck" class="deck__container card--back"> LoveLetter </div>
         </div>
     </div>
 </body>
