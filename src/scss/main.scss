@@ -27,6 +27,7 @@ body{
 
 
 .card__element{
+    @extend .flex--complet;
     width: 150px;
     height: 200px;
     border: 1px solid #222;
@@ -39,6 +40,8 @@ body{
 
 .enemies__container{
     position: absolute;
+    @extend .flex--complet;
+    justify-content: space-around;
     left:0;
     top:0;
     display: flex;
