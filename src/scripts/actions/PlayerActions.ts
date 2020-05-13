@@ -24,6 +24,7 @@ const player_actions = {
     // dropping card without using it
     drop: function () {
         console.log('drop!')
+        this.cards.pop();
         this.gameover = cards_actions[7](this.cards)
     }
 }

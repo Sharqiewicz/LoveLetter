@@ -44,7 +44,7 @@ const turn_actions = {
                     document.querySelectorAll('.enemy--card')[index].classList.add('card--hidden');
                 }
                 if (index == 0) {
-                    //player is dead
+                    document.querySelector('.user__container').classList.add('card--hidden')
                 }
 
                 //remove the player who lost from the players array
