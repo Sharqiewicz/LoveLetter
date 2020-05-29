@@ -89,6 +89,7 @@ const turn_actions = {
         if(nextindex === undefined){
             next = [];
             this.players.forEach((el, index, arr) => next.push(moveNextActivityIndex(el, index, arr)));
+            console.log(next)
             nextindex = next.find(el => el !== undefined);
         }
         else{
