@@ -7,6 +7,7 @@ export default class PlayerClass {
     public cards = [];
     public immunity: boolean = false;
     public active:boolean = false;
+    public nextActive: boolean = false;
     public gameover:boolean = false;
 
     // functions

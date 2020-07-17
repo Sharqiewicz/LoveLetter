@@ -5,6 +5,7 @@ const end_actions = {
         // set won property to true for stop starting new Turn
         this.won = true;
         console.log('end game')
+        console.log(this.players)
 
     },
 

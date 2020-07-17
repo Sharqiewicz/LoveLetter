@@ -8,9 +8,20 @@ function moveActivityIndex(player: Player, index:number, arr: Player[]): number{
 
             if ( index >= ( arr.length -1 )) {
                 return 0;
-           }
+            }
             return index + 1;
         }
+}
+
+function moveNextActivityIndex(player: Player, index:number, arr: Player[]): number{
+    if (player.nextActive) {
+        player.nextActive = false;
+
+        if ( index >= ( arr.length -1 )) {
+            return 0;
+        }
+        return index + 1;
+    }
 }
 
 const randomEnemy = (players: Player[], actual_player: Player): Player => {
@@ -69,8 +80,22 @@ const turn_actions = {
         // NADPISUJE INDEX KTORY JEST POPRAWNY
         // FIXED
         var next = []; var nextindex;
+
         this.players.forEach((el, index, arr) => next.push(moveActivityIndex(el, index, arr)));
+        console.log(next)
         nextindex = next.find(el => el !== undefined);
+
+        // jak gracz ginie w porowaniu to znika active
+        if(nextindex === undefined){
+            next = [];
+            this.players.forEach((el, index, arr) => next.push(moveNextActivityIndex(el, index, arr)));
+            console.log(next)
+            nextindex = next.find(el => el !== undefined);
+        }
+        else{
+            this.players.forEach((el, index, arr) => moveNextActivityIndex(el, index, arr));
+        }
+
         this.players[nextindex].active = true;
 
         console.log('now active active is: ' + this.players[nextindex].id)
