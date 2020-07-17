@@ -34,7 +34,6 @@ const start_actions = {
             console.log(this.players[i])
         }
         this.players[0].active = true;
-        this.players[1].nextActive = true;
         console.log('BOTS SETTED');
 
     },
